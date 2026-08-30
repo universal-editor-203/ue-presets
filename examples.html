@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UE Presets — examples</title>
+  <style>
+    :root { --bg:#0a0a0a; --surface:#141414; --orange:#ff6b00; --text:#f0f0f0; --muted:#888; --border:#222; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: system-ui, sans-serif; background: var(--bg); color: var(--text); padding: 2rem; line-height: 1.5; }
+    h1 { font-size: 1.6rem; margin-bottom: 0.35rem; }
+    h1 span { color: var(--orange); }
+    p { color: var(--muted); margin-bottom: 1.5rem; max-width: 520px; }
+    pre {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1rem;
+      overflow: auto;
+      font-size: 0.85rem;
+      margin-bottom: 1rem;
+    }
+    a { color: var(--orange); }
+  </style>
+</head>
+<body>
+  <h1>UE <span>Presets</span></h1>
+  <p>FFmpeg.wasm argument recipes for Universal Editor. Open the console and inspect <code>UEPresets</code>.</p>
+  <pre id="out">Loading…</pre>
+  <p><a href="https://universal-editor-203.github.io/editor.html#video">Open Universal Editor → Video</a></p>
+  <script src="presets.umd.js"></script>
+  <script>
+    const lines = Object.keys(UEPresets.PRESETS).map(function (id) {
+      return id + ': ' + JSON.stringify(UEPresets.PRESETS[id]({}));
+    });
+    document.getElementById('out').textContent = lines.join('\n\n');
+  </script>
+</body>
+</html>

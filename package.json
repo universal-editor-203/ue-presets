@@ -1,0 +1,11 @@
+{
+  "name": "ue-presets",
+  "version": "1.0.0",
+  "description": "FFmpeg.wasm presets for Universal Editor",
+  "type": "module",
+  "main": "presets.js",
+  "module": "presets.js",
+  "license": "MIT",
+  "author": "FoxPhantom203",
+  "keywords": ["ffmpeg", "ffmpeg.wasm", "universal-editor", "video", "presets"]
+}
